@@ -50,9 +50,6 @@ class UserForm extends Component{
           <div>
             <button>Añadir Usuario</button>
           </div>
-          <div>
-              <pre>{JSON.stringify(this.state)}</pre>
-          </div>
         </form>
         )
     }
