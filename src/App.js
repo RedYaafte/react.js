@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <from>
+          <div>
+            <input type="text" name="firstName" placeholder="Nombre" />
+          </div>
+          <div>
+            <input type="text" name="lastName" placeholder="Apellidos" />
+          </div>
+          <div>
+            <input type="date" name="birthDate" />
+          </div>
+          <div>
+            <button>Añadir Usuario</button>
+          </div>
+        </from>
+        <ul>
+          <li>Ernesto Jiménez Villaseñor</li>
+          <li>Juan Perez Prado</li>
+        </ul>
       </div>
     );
   }
