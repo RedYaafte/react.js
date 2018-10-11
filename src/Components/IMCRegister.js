@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import UserDetail from './UserDetail';
 import IMCList from './IMCList';
+import axios from "axios";
 
 
 class IMCRegister extends Component{
 
     state = {
-        user: {id: 1, firstName: 'Ernesto', lastName: 'Jiménez', birthDate: '1982-11-25'},
-        imc: [
-            {id: 1, weight: 89, height: 1.79, imc: 2.5},
-            {id: 2, weight: 89, height: 1.79, imc: 2.5},
-            {id: 3, weight: 89, height: 1.79, imc: 2.5},
-            {id: 4, weight: 89, height: 1.79, imc: 2.5},
-            {id: 5, weight: 89, height: 1.79, imc: 2.5},
-            {id: 6, weight: 89, height: 1.79, imc: 2.5},
-        ]
+        user: {},
+        imc: []
     }
 
+    async componentDidMount(){
+        const userId = this.props.match.params.id;
+        let userRequest = await axios.get(`http://localhost:3001/users/${userId}`);
+        let user = await userRequest.data;
+        let imcRequest = await axios.get(`http://localhost:3001/imc?userId=${userId}`);
+        let imc = await imcRequest.data;
+        this.setState({user, imc});
+    }
+
+    compo
+
     render = () => {
+        // console.log(this.props.match.params);
         return (
             <div>
                 IMCRegister
