@@ -1,11 +1,15 @@
 import React from 'react';
 
-const IMCList = () => {
+const IMCList = (props) => {
     return (
         <ul>
-            <li>
-                Esto tiene que tener su propio component.
-            </li>
+            {props.IMCList.map(item => {
+                return (
+                    <li key={item.id}>
+                        {item.weight} {item.height} {item.imc}
+                    </li>
+                )
+            })}
         </ul>
     )
 }
